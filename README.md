@@ -1,4 +1,5 @@
 # NoA_I
+Influenced by Arnold Schönbergs dodecaphonism.
  ## Python requirements 
  - pip3 install opencv-python
  - pip3 install python-osc
