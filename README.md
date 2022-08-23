@@ -12,7 +12,7 @@
  ## How to use
  - From Terminal or Visual Studio Code launch NoA_1.py
  - Open the Sequencer_Grid.pde with processing
- - Open the MaxMsp patches (use your own RAVE networks) 
+ - Open the MaxMsp patches (use your own RAVE models) 
  ## How it works
  - This is an installation, which uses camera input. 
  - When it detects a face it starts the actual processing.
