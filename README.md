@@ -11,7 +11,7 @@
  https://github.com/acids-ircam/RAVE
  ## How to use
  - From Terminal or Visual Studio Code launch NoA_1.py
- - Open the Sequencer Grid with processing
+ - Open the Sequencer_Grid.pde with processing
  - Open the MaxMsp patches (use your own RAVE networks) 
  ## How it works
  - This is an installation, which uses camera input. 
