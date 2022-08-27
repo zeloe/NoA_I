@@ -19,7 +19,9 @@ Influenced by Arnold Schönbergs dodecaphonism.
  - This is an installation, which uses camera input. 
  - When it detects a face it starts the actual processing.
  - For every 50 x 50 pixel it performs the mean.
- - It saves every 50 x 50 pixel part and sets the highest value to 0.
+ - It saves every 50 x 50 pixel and computes the mean and adds it to the part before.
+ - The highest pixel mean will play a sound.
+ - The highest pixel will be reset to 0.
  - Like this every sound has a higher possibility to get played.
  ## Why...
  - This was part of an university project.
