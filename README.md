@@ -21,7 +21,7 @@ Influenced by Arnold Schönbergs dodecaphonism.
  - For every 50 x 50 pixel it performs the mean.
  - It saves every 50 x 50 pixel and computes the mean and adds it to the part before.
  - The highest pixel mean will play a sound.
- - The highest pixel will be reset to 0.
+ - The highest pixel mean will be reset to 0.
  - Like this every sound has a higher possibility to get played.
  ## Why...
  - This was part of an university project.
