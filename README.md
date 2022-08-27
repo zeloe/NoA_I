@@ -3,6 +3,7 @@ Influenced by Arnold Schönbergs dodecaphonism.
  ## Python requirements 
  - pip3 install opencv-python
  - pip3 install python-osc
+ - pip3 install numpy
  ## Install processing
  https://processing.org/
  - install osc5 (external library)
