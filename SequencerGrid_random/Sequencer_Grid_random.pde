@@ -21,7 +21,7 @@ void setup() {
   int wideCount = width / unit;
   int highCount = height / unit;
   count = wideCount * highCount;
-  oscP5 = new OscP5(this,8000);
+  oscP5 = new OscP5(this,8001);
   mods = new Module[count];
   int index = 0;
   for (int y = 0; y < highCount; y++) {
