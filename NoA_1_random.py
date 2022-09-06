@@ -11,6 +11,8 @@ rng.seed(12345)
 face_cascade = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
 flag1 = True
 flagcheck = False
+index_rand = np.arange(0, 550, 50, dtype=int)
+index_rand[10] = 449
 vid = cv.VideoCapture(0)
 counter = 0
 scounter = 0
@@ -38,7 +40,7 @@ rowscountmax = 10
 highrowscount = 0
 ###################
 correctindex = 1
-
+random_idxing = True
 #########
 is_all_zero = False
 svalues = []
@@ -49,9 +51,9 @@ savefinal = 0
 indexreset = 0
 counteroffset = 0
 values = []
-client = udp_client.SimpleUDPClient('127.0.0.1', 8000)
-superclient = udp_client.SimpleUDPClient('127.0.0.1', 9000)
-picturename = "Sequencer_Grid/0"
+client = udp_client.SimpleUDPClient('127.0.0.1', 8001)
+superclient = udp_client.SimpleUDPClient('127.0.0.1', 9001)
+picturename = "SequencerGrid_random/1"
 sending = False
 listpicture = []
 saveimage = False
@@ -89,6 +91,7 @@ while(True):
       flag1 = False
       flagcheck = True
       saveimage = True
+      random_idxing = True
     cv.imshow('face', cv_resized_img)
       # Show in a window
     cv.imshow('Contours', drawing)
@@ -101,17 +104,27 @@ while(True):
       temp2 = drawing.copy()
         #convert to grayscale
       temp2 = cv.cvtColor(temp2, cv.COLOR_RGB2GRAY)	
+      while(random_idxing == True):
         #write
-      cv.imwrite(str(picturename) + '.jpg', temp2) 
+        temp3 = temp2.copy()
+        rand_indx = np.random.choice(10, 10, replace=False)  
+        for idx, idx_arr in enumerate (rand_indx):
+          for x in range(50):
+            for y in range(50):
+              temp3[index_rand[idx_arr] + y] = temp2[index_rand[idx] + y]
+            temp3[index_rand[idx_arr]][index_rand[idx_arr] + x] = temp2[index_rand[idx]][index_rand[idx]+ x]
+
+        cv.imwrite(str(picturename) + '.jpg', temp3) 
         #prepare list for osc
-      listpicture.append("0"+ '.jpg')
+        listpicture.append("1" + '.jpg')
         #send list to osc
-      client.send_message('/path',listpicture)
+        client.send_message('/path',listpicture)
         #clear list
-      listpicture.clear()
+        listpicture.clear()
         #increment 
         #exit if
-      saveimage = False
+        saveimage = False
+        random_idxing = False
       #iterate over 50 x 50 = 2500 square 
     for x2 in range(50):
       for y2 in range(50):
