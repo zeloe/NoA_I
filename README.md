@@ -12,8 +12,8 @@ Influenced by Arnold Schönbergs dodecaphonism.
  ## Download Rave and follow Instructions for training and compiling the external
  https://github.com/acids-ircam/RAVE
  ## How to use
- - From Terminal or Visual Studio Code launch NoA_1.py
- - Open the Sequencer_Grid.pde with processing
+ - From Terminal or Visual Studio Code launch NoA_1.py or NoA_1_random.py or both
+ - Open the Sequencer_Grid.pde or Sequencer_Grid_random.pde with processing or both
  - Open the MaxMsp patches (use your own RAVE models) 
  ## How it works
  - This is an installation, which uses camera input. 
